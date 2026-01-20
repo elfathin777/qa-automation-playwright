@@ -8,12 +8,32 @@ This repository contains automated **Web UI** and **API** tests developed as par
 
 ### Prerequisites
 
+*Visual Studio Code (recommended IDE)
 * Node.js (v18 or newer recommended)
 * npm
+* Git
+
+
+### Clone the Repository
+Using Git Bash, clone the repository:
+
+```bash
+git clone https://github.com/elfathin777/qa-automation-playwright.git
+```
+Navigate into the project directory:
+
+```bash
+cd qa-automation-playwright
+```
+
+Open the project in your IDE (VS Code recommended) after cloning the repository:
+```bash
+code .
+```
 
 ### Install Dependencies
 
-From the project root directory, run:
+From the terminal inside VS Code, run:
 
 ```bash
 npm install
@@ -64,6 +84,7 @@ npx playwright show-report
 The report includes test results, failure details, screenshots, and traces (when applicable).
 
 ---
+
 
 ## 3. Assumptions & Limitations
 
