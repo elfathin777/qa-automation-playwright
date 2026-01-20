@@ -1,15 +1,3 @@
-Siap. Aku **perbaiki dan sesuaikan README kamu** supaya:
-
-* Lebih **rapi & konsisten**
-* Bahasanya **lebih profesional (take-home ready)**
-* Selaras dengan **kode & CI yang sudah kamu buat**
-* Tidak overclaim (tidak janji fitur yang belum tentu ada)
-
-Ini versi **FINAL yang aman untuk dikirim** 👇
-(Kamu bisa **replace langsung** README lama)
-
----
-
 # QA Automation – Playwright Take Home Test
 
 This repository contains automated **Web UI** and **API** tests developed as part of a QA Automation take-home technical test.
