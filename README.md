@@ -1,7 +1,6 @@
 # QA Automation – Playwright Take Home Test
 
-This repository contains automated **Web UI** and **API** tests developed as part of a QA Automation take-home technical test.
-The solution focuses on **clarity, maintainability, and reliability**, prioritizing clean test design over framework complexity.
+This repository contains automated **Web UI** and **API** tests developed as part of a QA Automation take home technical test. The solution focuses on **clarity, maintainability, and reliability**, prioritizing clean test design.
 
 ---
 
