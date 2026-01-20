@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { LoginPage } from '../../../pages/LoginPage';
 
 test.beforeEach(async ({ page }) => {
-    await page.goto('/www.saucedemo.com');
+    await page.goto('/');
 })
 
 test.describe('Login Case', () => {

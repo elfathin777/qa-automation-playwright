@@ -29,34 +29,53 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    baseURL: 'https://reqres.in',
-    headless: true,
-    extraHTTPHeaders: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-      'User-Agent': 'reqres-qa-tests/1.0',
-      'x-api-key': process.env.API_KEY || '',
-    },
     screenshot: 'only-on-failure', // To take screenshot or logs on failure
     trace: 'on-first-retry',
   },
+  projects: [
+    // 1. Project For API
+    {
+      name: 'api-tests',
+      testMatch: '**/reqres.spec.ts',
+      use: {
+        baseURL: 'https://reqres.in',
+        extraHTTPHeaders: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'User-Agent': 'reqres-qa-tests/1.0',
+          'x-api-key': process.env.API_KEY || '',
+        },
+      },
+    },
+
+    // 2. Project For UI
+    {
+      name: 'ui-tests',
+      testMatch: ['**/login.spec.ts', '**/cart.spec.ts'],
+      use: { 
+        ...devices['Desktop Chrome'],
+        baseURL: 'https://www.saucedemo.com',
+        headless: false,
+      },
+    },
+  ],
 
   /* Configure projects for major browsers */
-  projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
+  // projects: [
+  //   {
+  //     name: 'chromium',
+  //     use: { ...devices['Desktop Chrome'] },
+  //   },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+  //   {
+  //     name: 'firefox',
+  //     use: { ...devices['Desktop Firefox'] },
+  //   },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+  //   {
+  //     name: 'webkit',
+  //     use: { ...devices['Desktop Safari'] },
+  //   },
 
     /* Test against mobile viewports. */
     // {
@@ -75,9 +94,9 @@ export default defineConfig({
     // },
     // {
     //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
-  ],
+  //   //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+  //   // },
+  // ],
 
   /* Run your local dev server before starting the tests */
   // webServer: {

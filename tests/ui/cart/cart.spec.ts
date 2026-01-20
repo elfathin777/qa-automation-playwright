@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
     const loginPage = new LoginPage(page);
     homePage = new HomePage(page);
 
-    await page.goto('https://www.saucedemo.com/');
+    await page.goto('/');
     await loginPage.login('standard_user', 'secret_sauce');  
 })
 
