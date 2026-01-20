@@ -8,9 +8,9 @@ export class HomePage {
     
     constructor(page: Page) {
         this.page = page;
-        this.productTitle = page.locator('.inventory_item_name');
-        this.cartBadge = page.locator('.shopping_cart_badge');   
-        this.cartIcon = page.locator('.shopping_cart_link');
+        this.productTitle = page.locator('[data-test="inventory-item-name"]');
+        this.cartBadge = page.locator('[data-test="shopping-cart-badge"]');   
+        this.cartIcon = page.locator('[data-test="shopping-cart-link"]');
     }
     
     async addItem(itemName: string){
