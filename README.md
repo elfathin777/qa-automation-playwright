@@ -1,103 +1,117 @@
-## 📌 Playwright Automation Testing Project
+Siap. Aku **perbaiki dan sesuaikan README kamu** supaya:
 
-**(Work in Progress)**
+* Lebih **rapi & konsisten**
+* Bahasanya **lebih profesional (take-home ready)**
+* Selaras dengan **kode & CI yang sudah kamu buat**
+* Tidak overclaim (tidak janji fitur yang belum tentu ada)
 
-This repository contains an **automation testing project** built using **Playwright**, focusing on practicing web UI automation through a step-by-step development approach.
-
-The project is currently **in progress**, starting with **basic login automation** using standard Playwright syntax. More advanced approaches such as **Data-Driven Testing (DDT)** will be introduced in future updates.
-
----
-
-## 🚧 Project Status
-
-🔄 **Ongoing / In Progress**
-
-* Current implementation: **Login automation (basic syntax)**
-* Framework and test structure are under active development
-* The project is updated **regularly as new features are added**
+Ini versi **FINAL yang aman untuk dikirim** 👇
+(Kamu bisa **replace langsung** README lama)
 
 ---
 
-## 🎯 Project Purpose
+# QA Automation – Playwright Take Home Test
 
-This project aims to:
-
-* Build a solid foundation in **Playwright automation**
-* Practice writing clean and readable automation tests
-* Gradually evolve from basic automation to more advanced patterns
-* Serve as a **QA Automation learning and portfolio project**
+This repository contains automated **Web UI** and **API** tests developed as part of a QA Automation take-home technical test.
+The solution focuses on **clarity, maintainability, and reliability**, prioritizing clean test design over framework complexity.
 
 ---
 
-## 🧪 Current Automation Scope
+## 1. Installation & Setup
 
-### Implemented Feature
+### Prerequisites
 
-**Login Automation**
+* Node.js (v18 or newer recommended)
+* npm
 
-* Successful login scenario
-* Failed login scenario (invalid credentials)
-* Basic assertions to validate login behavior
+### Install Dependencies
 
-> Test cases are currently implemented using **direct Playwright syntax** without data-driven logic.
+From the project root directory, run:
 
----
+```bash
+npm install
+```
 
-## 🔁 Automation Approach
+### Environment Variables
 
-* Direct Playwright test scripting
-* Clear separation between test steps and assertions
-* Simple and readable test flow for learning purposes
+API tests require an API key for ReqRes.
 
-Future updates will include:
+Create a `.env` file in the project root:
 
-* Data-Driven Testing (DDT)
-* Reusable functions or page abstraction
-* Improved test structure and scalability
+```env
+API_KEY=your_reqres_api_key_here
+```
 
----
-
-## 🧱 Tools & Technologies
-
-* Playwright
-* JavaScript / TypeScript
-* Node.js
-* Git & GitHub
+> The `.env` file is intentionally excluded from version control for security reasons.
 
 ---
 
-## ▶️ How to Run the Tests
+## 2. Running Tests
 
-1. Clone this repository
-2. Install dependencies:
+### Run all tests
 
-   ```bash
-   npm install
-   ```
-3. Run the tests:
+```bash
+npx playwright test
+```
 
-   ```bash
-   npx playwright test
-   ```
+### Run UI tests only
+
+```bash
+npx playwright test tests/ui
+```
+
+### Run API tests only
+
+```bash
+npx playwright test tests/api
+```
+
+### View HTML Test Report
+
+After test execution, open the HTML report with:
+
+```bash
+npx playwright show-report
+```
+
+The report includes test results, failure details, screenshots, and traces (when applicable).
 
 ---
 
-## 🔮 Planned Enhancements
+## 3. Assumptions & Limitations
 
-* Implement Data-Driven Testing (DDT)
-* Refactor login test into reusable components
-* Add more features and negative test scenarios
-* Improve reporting and test organization
-
----
-
-## 👤 Author
-
-**Haruna Elfathin**
-QA Automation | Playwright Learning Project
+* **ReqRes is a public mock API**, so response data is not persisted and may be subject to rate limiting.
+* API tests include a small delay between requests to reduce the risk of hitting rate limits.
+* API assertions are based on **response contracts**, not on stored or persistent data.
+* UI tests run against the public **SauceDemo** environment.
+* Mobile testing, performance testing, and security testing are out of scope for this assignment.
 
 ---
 
-## 📄 Notes
+## 4. Improvements with More Time
 
-This project reflects an **incremental learning approach**, starting from basic automation and evolving toward more advanced automation testing practices.
+Given additional time, the following improvements could be implemented:
+
+* Introduce Gherkin (BDD) syntax for better collaboration with non-technical stakeholders
+* Apply data-driven testing (DDT) for scenarios with multiple input combinations such as login and form validation
+* Add schema validation for API responses
+* Introduce reusable test data builders
+* Enhance CI execution with additional test separation and reporting
+* Extend API logging for improved debugging
+* Expand negative and edge-case coverage for both UI and API tests
+
+---
+
+## Notes
+
+* Page Object Model (POM) is used for UI tests to improve readability and maintainability.
+* API request logic is separated from test assertions for clearer test intent.
+* No hard-coded sleeps are used in UI tests.
+* API tests are intentionally throttled to ensure stability when interacting with a public API.
+
+---
+
+### Author
+
+Haruna Elfathin
+
